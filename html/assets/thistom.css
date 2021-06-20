@@ -60,6 +60,15 @@ header {
     text-decoration: underline;
 }
 
+#navbar-toggle-cb, .navbar-toggle {
+	display: none;
+}
+.navbar-toggle {
+	padding: 0.5em;
+	border: 1px solid #9aa8b4;
+	border-radius: 20%;
+}
+
 footer {
 	padding: 1em;
 	text-align: center;
@@ -122,9 +131,26 @@ section h2 {
 		flex-wrap: wrap;
 	}
 	.navbar ul {
+		display: none;
 		flex-basis: 100%;
 		flex-direction: column;
 	}
+	.navbar-toggle {
+		display: flex;
+	}
+	.navbar-toggle:after {
+		content: "▼";
+		transition: transform 400ms;
+		vertical-align: middle;
+		align: center;
+	}
+	#navbar-toggle-cb:checked ~ ul {
+		display: flex;
+	}
+	#navbar-toggle-cb:checked + .navbar-toggle:after {
+		transform: rotate(180deg);
+	}
+
 	section#front {
 		flex-flow: column wrap;
 		text-align: center;

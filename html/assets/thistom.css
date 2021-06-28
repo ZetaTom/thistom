@@ -7,16 +7,37 @@ html {
 }
 body {
 	font-family: "Futura", "Helvetica neue", "Helvetica", sans-serif;
-	color: #f0f7f4;
-	background-color: #2e4756;
+	color: var(--text);
+	background-color: var(--background);
+
+	--background: #e9eaec;
+	--background-highlight: radial-gradient(circle, #2e4756 0%, #293f4d 100%);
+	--text: #2e2e2e;
+	--text-shadow: #52525244;
+	--text-highlight: #f0f7f4;
+	--link: #6e6e6e;
+	--link-active: #363636;
+	--border: #999;
+}
+
+/* Dark Theme */
+.night {
+	--background: #16262e;
+	--background-highlight: radial-gradient(circle, #2e4756 0%, #293f4d 100%);
+	--text: #f0f7f4;
+	--text-shadow: #0004;
+	--text-highlight: #f0f7f4;
+	--link: #8a8a8a;
+	--link-active: #cfcfcf;
+	--border: #696969;
 }
 
 a {
-	color: #999;
+	color: var(--link);
 	text-decoration: none;
 }
 a:hover, a:active {
-	text-decoration: underline;
+	color: var(--link-active);
 }
 
 header {
@@ -25,8 +46,8 @@ header {
 	left: 0;
 	right: 0;
 	z-index: 100;
-	background-color: #2e4756;
-	border-bottom: 1px solid #999;
+	background-color: var(--background);
+	border-bottom: 1px solid var(--border);
 }
 .container {
 	max-width: 70em;
@@ -43,11 +64,11 @@ header {
 .navbar-brand {
 	font-size: 2em;
 	font-weight: bold;
-	color: #f0f7f4;
-	text-shadow: 0.15em 0.15em #0004;
+	color: var(--text);
+	text-shadow: 0.15em 0.15em var(--text-shadow);
 }
 .navbar .active {
-	color: #f0f7f4;
+	color: var(--link-active);
 }
 .navbar ul {
 	display: flex;
@@ -66,7 +87,7 @@ header {
 }
 .navbar-toggle {
 	padding: 0.5em;
-	border: 1px solid #999;
+	border: 1px solid var(--border);
 	border-radius: 20%;
 }
 
@@ -74,21 +95,17 @@ footer {
 	padding: 1em;
 	text-align: center;
 	font-size: 0.75em;
-}
-footer a {
-	text-decoration: none;
-	color: #999;
+	border-top: 1px solid var(--border);
 }
 
 section {
 	position: relative;
-	background-color: #16262e;
 }
 section h1 {
 	padding-top: 3em;
 	padding-bottom: 1em;
 	font-size: 2em;
-	text-shadow: 0.1em 0.1em #0004;
+	text-shadow: 0.1em 0.1em var(--text-shadow);
 }
 section h2 {
 	padding-top: 1em;
@@ -102,16 +119,17 @@ section h2 {
 	align-items: center;
 	justify-content: center;
 	font-size: 4em;
-	text-shadow: 0.1em 0.1em #0004;
-	background-color: #2e4756;
+	text-shadow: 0.1em 0.1em var(--text-shadow);
+	background: var(--background-highlight);
 	user-select: none;
+	color: var(--text-highlight);
 }
 #front img {
 	margin: 0 0.5em;
 	width: 3em;
 	height: 3em;
 	border-radius: 50%;
-	box-shadow: 0.1em 0.1em #0004;
+	box-shadow: 0.1em 0.1em var(--text-shadow);
 	image-rendering: crisp-edges;
 }
 #about {
@@ -140,7 +158,7 @@ section h2 {
 	}
 	.navbar-toggle:after {
 		content: "▼";
-		align: center;
+		align-self: stretch;
 		vertical-align: middle;
 		transition: transform 300ms ease-in-out;
 	}

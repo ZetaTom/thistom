@@ -2,26 +2,34 @@
 	margin: 0;
 	padding: 0;
 }
-html {	
+html {
 	scroll-behavior: smooth;
 }
 body {
 	font-family: "Futura", "Helvetica neue", "Helvetica", sans-serif;
-	color: #f2f6f2;
-	background-color: #2d4656;
+	color: #f0f7f4;
+	background-color: #2e4756;
 }
 
-header {	
+a {
+	color: #999;
+	text-decoration: none;
+}
+a:hover, a:active {
+	text-decoration: underline;
+}
+
+header {
 	position: fixed;
 	top: 0;
 	left: 0;
 	right: 0;
 	z-index: 100;
-	background-color: #2d4656;
-	border-bottom: 1px solid #9aa8b4;
+	background-color: #2e4756;
+	border-bottom: 1px solid #999;
 }
 .container {
-	max-width: 90em;
+	max-width: 70em;
 	padding: 0.5em 1em;
 	margin-right: auto;
 	margin-left: auto;
@@ -35,17 +43,15 @@ header {
 .navbar-brand {
 	font-size: 2em;
 	font-weight: bold;
-	color: #f2f6f2;
-	text-shadow: 0.15em 0.15em rgba(0,0,0,0.3);
+	color: #f0f7f4;
+	text-shadow: 0.15em 0.15em #0004;
 }
 .navbar .active {
-	color: #f2f6f2;
-}
-.navbar a {
-	text-decoration: none;
+	color: #f0f7f4;
 }
 .navbar ul {
 	display: flex;
+	overflow: hidden;
 	text-align: center;
 	list-style: none;
 	font-size: 1.1em;
@@ -53,11 +59,6 @@ header {
 .navbar ul a {
 	padding: 0.2em 1em;
 	display: inline-block;
-	color: #9aa8b4;
-}
-.navbar li a:hover,
-.navbar li a:focus {
-    text-decoration: underline;
 }
 
 #navbar-toggle-cb, .navbar-toggle {
@@ -65,7 +66,7 @@ header {
 }
 .navbar-toggle {
 	padding: 0.5em;
-	border: 1px solid #9aa8b4;
+	border: 1px solid #999;
 	border-radius: 20%;
 }
 
@@ -73,21 +74,21 @@ footer {
 	padding: 1em;
 	text-align: center;
 	font-size: 0.75em;
-	background-color: #2d4656;
 }
 footer a {
 	text-decoration: none;
-	color: #9aa8b4;
+	color: #999;
 }
 
 section {
 	position: relative;
+	background-color: #16262e;
 }
 section h1 {
 	padding-top: 3em;
 	padding-bottom: 1em;
 	font-size: 2em;
-	text-shadow: 0.1em 0.1em rgba(0,0,0,0.3);
+	text-shadow: 0.1em 0.1em #0004;
 }
 section h2 {
 	padding-top: 1em;
@@ -101,7 +102,8 @@ section h2 {
 	align-items: center;
 	justify-content: center;
 	font-size: 4em;
-	text-shadow: 0.1em 0.1em rgba(0,0,0,0.3);
+	text-shadow: 0.1em 0.1em #0004;
+	background-color: #2e4756;
 	user-select: none;
 }
 #front img {
@@ -109,19 +111,16 @@ section h2 {
 	width: 3em;
 	height: 3em;
 	border-radius: 50%;
-	box-shadow: 0.1em 0.1em rgba(0,0,0,0.3);
+	box-shadow: 0.1em 0.1em #0004;
 	image-rendering: crisp-edges;
 }
 #about {
-	background-color: #333;
 	height: 100vh;
 }
 #projects {
-	background-color: #222;
 	height: 100vh;
 }
 #contact {
-	background-color: #111;
 	height: 100vh;
 }
 
@@ -131,21 +130,22 @@ section h2 {
 		flex-wrap: wrap;
 	}
 	.navbar ul {
-		display: none;
+		max-height: 0;
 		flex-basis: 100%;
 		flex-direction: column;
+		transition: max-height 300ms ease-out;
 	}
 	.navbar-toggle {
 		display: flex;
 	}
 	.navbar-toggle:after {
 		content: "▼";
-		transition: transform 400ms;
-		vertical-align: middle;
 		align: center;
+		vertical-align: middle;
+		transition: transform 300ms ease-in-out;
 	}
 	#navbar-toggle-cb:checked ~ ul {
-		display: flex;
+		max-height: 8em;
 	}
 	#navbar-toggle-cb:checked + .navbar-toggle:after {
 		transform: rotate(180deg);

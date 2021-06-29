@@ -12,7 +12,7 @@ body {
 }
 
 a {
-	color: #999;
+	color: #AAA;
 	text-decoration: none;
 }
 a:hover, a:active {
@@ -26,7 +26,7 @@ header {
 	right: 0;
 	z-index: 100;
 	background-color: #2e4756;
-	border-bottom: 1px solid #999;
+	border-bottom: 1px solid #AAA;
 }
 .container {
 	max-width: 70em;
@@ -66,7 +66,7 @@ header {
 }
 .navbar-toggle {
 	padding: 0.5em;
-	border: 1px solid #999;
+	border: 1px solid #AAA;
 	border-radius: 20%;
 }
 
@@ -74,10 +74,6 @@ footer {
 	padding: 1em;
 	text-align: center;
 	font-size: 0.75em;
-}
-footer a {
-	text-decoration: none;
-	color: #999;
 }
 
 section {
@@ -104,6 +100,7 @@ section h2 {
 	font-size: 4em;
 	text-shadow: 0.1em 0.1em #0004;
 	background-color: #2e4756;
+	background: radial-gradient(circle, #2e4756 0%, #223742 100%);
 	user-select: none;
 }
 #front img {
@@ -137,11 +134,11 @@ section h2 {
 	}
 	.navbar-toggle {
 		display: flex;
+		justify-content: center;
+		align-items: center;
 	}
 	.navbar-toggle:after {
 		content: "▼";
-		align: center;
-		vertical-align: middle;
 		transition: transform 300ms ease-in-out;
 	}
 	#navbar-toggle-cb:checked ~ ul {

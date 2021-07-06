@@ -1,0 +1,4 @@
+# ignore icons and images
+*.ico
+*.png
+/stuff/
